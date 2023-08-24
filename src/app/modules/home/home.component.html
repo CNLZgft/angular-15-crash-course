@@ -25,4 +25,9 @@
   <mat-label>Name</mat-label>
   <input matInput [(ngModel)]="name">
 </mat-form-field>-->
+
+<!--para redireccionar de forma simple se usa el routerLink-->
+<button routerLink="/profile">IR AL PROFILE con RouterLink</button>
+<button (click)="goToProfile()">IR AL PROFILE con Click Event</button>
+
 <app-footer></app-footer>

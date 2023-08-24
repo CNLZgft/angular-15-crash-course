@@ -10,6 +10,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './modules/home/home.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -23,6 +25,8 @@ import { HomeComponent } from './modules/home/home.component';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

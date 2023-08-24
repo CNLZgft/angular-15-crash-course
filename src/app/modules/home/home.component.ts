@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable, of, Subscription } from 'rxjs';
 
 @Component({
@@ -14,7 +15,7 @@ export class HomeComponent {
   name: string | undefined;
   lastName: string | undefined;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   observable$: Observable<number> = of(1, 2, 3, 4, 5);
 
@@ -52,6 +53,10 @@ export class HomeComponent {
     console.log('Valid?: ', this.formGroup?.valid);
 
     console.log(this.formGroup?.value);
+  }
+
+  goToProfile() {
+    this.router.navigate(['/profile']);
   }
 
   ngOnDestroy(): void {
