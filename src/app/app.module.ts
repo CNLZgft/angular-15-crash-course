@@ -12,9 +12,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './modules/home/home.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing.module';
+import { ProductComponent } from './modules/product/product.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, ProductComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -27,6 +29,7 @@ import { AppRoutingModule } from './app.routing.module';
     ReactiveFormsModule,
     RouterModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
