@@ -1,0 +1,13 @@
+<div>
+  <h1>{{ title }}</h1>
+
+  <p>{{ capitalText | uppercase }}</p>
+  <p>{{ titleText | titlecase }}</p>
+  <p>{{ isoDate | date : "dd/MMM/yyyy" }}</p>
+  <p>{{ price | currency : "EUR" }}</p>
+  <p>{{ digit | number : "1.0-3" }}</p>
+  <p>{{ birthday | birthday }}</p>
+</div>
+<p [ngStyle]="{ 'text-align': 'center' }" *ngFor="let num of numArray">
+  {{ num }}
+</p>
