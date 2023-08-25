@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, of, Subscription } from 'rxjs';
 
@@ -15,14 +15,14 @@ export class HomeComponent {
   name: string | undefined;
   lastName: string | undefined;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  constructor(private formBuilder: UntypedFormBuilder, private router: Router) {}
 
   observable$: Observable<number> = of(1, 2, 3, 4, 5);
 
   subscription: Subscription | undefined;
   formSubscription: Subscription | undefined;
 
-  formGroup: FormGroup | undefined;
+  formGroup: UntypedFormGroup | undefined;
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
