@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
-  getProducts,
+  getProductsAction,
   getProductsFail,
   getProductsSuccess,
 } from './product.actions';
@@ -18,7 +18,7 @@ export class ProductsEffects {
 
   loadProducts$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(getProducts),
+      ofType(getProductsAction),
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       switchMap((action) => {
         return this.productService.getProducts().pipe(

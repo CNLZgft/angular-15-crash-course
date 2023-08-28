@@ -1,5 +1,9 @@
 <div class="wrapper">
-  <mat-card appearance="outlined" class="example-card" *ngFor="let product of products">
+  <mat-card
+    appearance="outlined"
+    class="example-card"
+    *ngFor="let product of products$ | async"
+  >
     <mat-card-header>
       <mat-card-title>{{ product.title }}</mat-card-title>
     </mat-card-header>

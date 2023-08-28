@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { ProductResponse } from '../models/product.interface';
 
-export const getProducts = createAction('[Product Actions] Get Products');
+export const getProductsAction = createAction('[Product Actions] Get Products');
 
 export const getProductsSuccess = createAction(
   '[Product Actions] Get Products Success',
