@@ -1,0 +1,33 @@
+<app-header *ngIf="isVisible" [title]="headerTitle"></app-header>
+<mat-card appearance="outlined">
+  <mat-card-content> Simple card </mat-card-content>
+</mat-card>
+<button mat-button color="primary">Primary</button>
+<button mat-button color="accent">Accent</button>
+<button mat-button color="warn">Warn</button>
+
+<!--Reactive Form-->
+<form *ngIf="formGroup" [formGroup]="formGroup">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>LastName</mat-label>
+    <input matInput formControlName="lastName" />
+  </mat-form-field>
+  <button mat-flat-button color="primary" (click)="onSubmit()">Submit</button>
+</form>
+
+<!--The forms that uses the ngModel data binding are called template driven forms-->
+<!--example-->
+<!--<mat-form-field>
+  <mat-label>Name</mat-label>
+  <input matInput [(ngModel)]="name">
+</mat-form-field>-->
+
+<!--para redireccionar de forma simple se usa el routerLink-->
+<button routerLink="/profile">IR AL PROFILE con RouterLink</button>
+<button (click)="goToProfile()">IR AL PROFILE con Click Event</button>
+
+<app-footer></app-footer>

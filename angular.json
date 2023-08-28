@@ -104,5 +104,7 @@
       }
     }
   },
-  "defaultProject": "angular-15-crash-course"
+  "cli": {
+    "analytics": false
+  }
 }
