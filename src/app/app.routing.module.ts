@@ -1,8 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './modules/home/home.component';
-import { ProfileComponent } from './modules/profile/profile.component';
 import { NgModule } from '@angular/core';
-import { ProductComponent } from './modules/product/product.component';
 
 const routes: Routes = [
   {
@@ -11,17 +8,38 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  //normal routing if only the app module exists
+  // {
+  //   path: 'home',
+  //   component: HomeComponent,
+  // },
+  // {
+  //   path: 'profile',
+  //   component: ProfileComponent,
+  // },
+  // {
+  //   path: 'product',
+  //   component: ProductComponent,
+  // },
+  //routing with lazyloading, needs to be done with a  promise
   {
     path: 'home',
-    component: HomeComponent,
+    loadChildren: () =>
+      import('./modules/home/home.module').then((module) => module.HomeModule),
   },
   {
     path: 'profile',
-    component: ProfileComponent,
+    loadChildren: () =>
+      import('./modules/profile/profile.module').then(
+        (module) => module.ProfileModule
+      ),
   },
   {
     path: 'product',
-    component: ProductComponent,
+    loadChildren: () =>
+      import('./modules/product/product.module').then(
+        (module) => module.ProductModule
+      ),
   },
 ];
 
